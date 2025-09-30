@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.Duration;
+
 
 @RequestMapping("/api/moderate")
 @RequiredArgsConstructor
@@ -21,7 +23,7 @@ public class ModerationController {
     @SneakyThrows
     @PostMapping
     public ModerationOutput moderate(@RequestBody ModerationInput input) {
-        //Thread.sleep(Duration.ofSeconds(10));
+        Thread.sleep(Duration.ofSeconds(5));
         return moderationService.moderate(input);
 
     }

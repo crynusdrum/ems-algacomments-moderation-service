@@ -2,15 +2,13 @@ package com.algaworks.algacomments.moderation.service.api.controller;
 
 import com.algaworks.algacomments.moderation.service.api.model.ModerationInput;
 import com.algaworks.algacomments.moderation.service.api.model.ModerationOutput;
-import com.algaworks.algacomments.moderation.service.api.service.ModerationService;
+import com.algaworks.algacomments.moderation.service.domain.service.ModerationService;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.time.Duration;
 
 
 @RequestMapping("/api/moderate")
@@ -23,7 +21,7 @@ public class ModerationController {
     @SneakyThrows
     @PostMapping
     public ModerationOutput moderate(@RequestBody ModerationInput input) {
-        Thread.sleep(Duration.ofSeconds(5));
+        //Thread.sleep(Duration.ofSeconds(5));
         return moderationService.moderate(input);
 
     }
